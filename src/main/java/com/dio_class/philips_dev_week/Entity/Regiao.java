@@ -9,11 +9,11 @@ public class Regiao {
     @Column(nullable = false, updatable = false)
     private Long id;
     private String regiao;
-    private Long qnt_exames;
+    private Long total_exames;
 
     public Regiao(String regiao, Long qnt_exames) {
         this.regiao = regiao;
-        this.qnt_exames = qnt_exames;
+        this.total_exames = qnt_exames;
     }
 
     public Regiao(){}
@@ -31,11 +31,11 @@ public class Regiao {
     }
 
     public Long getQnt_exames() {
-        return qnt_exames;
+        return total_exames;
     }
 
     public void setQnt_exames(Long qnt_exames) {
-        this.qnt_exames = qnt_exames;
+        this.total_exames = qnt_exames;
     }
 
 }
