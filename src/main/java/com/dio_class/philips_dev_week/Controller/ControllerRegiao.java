@@ -20,8 +20,16 @@ public class ControllerRegiao {
     }
 
     @GetMapping("/regiao")
-    public List<Regiao> getRegiao(){
-        return repository.findAll();
+    public ResponseEntity<?> findAllRegioes(){
+        try {
+            List<Regiao> allRegioes = repository.findAll();
+            System.out.println("Achou");
+            if (allRegioes.isEmpty())
+                System.out.println("Vazia");
+            return new ResponseEntity<>(allRegioes, HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping("/regiao/{id}")
