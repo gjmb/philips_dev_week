@@ -3,34 +3,34 @@ package com.dio_class.philips_dev_week.Entity;
 import javax.persistence.*;
 
 @Entity
-public class Incidencia {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class IncidenciaExame {
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private Long Regiao_id;
+    private Integer Regiao_id;
     private Integer Mes;
     private Long Faixa_id;
-    private Long Qnt_exames;
+    private Integer Qnt_exames;
 
-    public Incidencia(Long regiao_id, Integer mes, Long faixa_id, Long qnt_exames) {
-        Regiao_id = regiao_id;
-        Mes = mes;
-        Faixa_id = faixa_id;
-        Qnt_exames = qnt_exames;
+    public IncidenciaExame(){
     }
 
-    public Incidencia(){}
+    public IncidenciaExame(Integer regiaoid, Integer mes, Long faixaid, Integer qntexames){
+        this.Regiao_id = regiaoid;
+        this.Mes = mes;
+        this.Faixa_id = faixaid;
+        this.Faixa_id = faixaid;
+    }
 
     public Long getId() {
         return id;
     }
 
-    public Long getRegiao_id() {
+    public Integer getRegiao_id() {
         return Regiao_id;
     }
 
-    public void setRegiao_id(Long regiao_id) {
+    public void setRegiao_id(Integer regiao_id) {
         Regiao_id = regiao_id;
     }
 
@@ -50,11 +50,12 @@ public class Incidencia {
         Faixa_id = faixa_id;
     }
 
-    public Long getQnt_exames() {
+    public Integer getQnt_exames() {
         return Qnt_exames;
     }
 
-    public void setQnt_exames(Long qnt_exames) {
+    public void setQnt_exames(Integer qnt_exames) {
         Qnt_exames = qnt_exames;
     }
 }
+
