@@ -9,9 +9,9 @@ public class Regiao {
     @Column(nullable = false, updatable = false)
     private Long id;
     private String regiao;
-    private Long total_exames;
+    private Integer total_exames;
 
-    public Regiao(String regiao, Long total_exames) {
+    public Regiao(long l, String regiao, int total_exames) {
         this.regiao = regiao;
         this.total_exames = total_exames;
     }
@@ -30,11 +30,11 @@ public class Regiao {
         this.regiao = regiao;
     }
 
-    public Long getTotal_exames() {
+    public Integer getTotal_exames() {
         return total_exames;
     }
 
-    public void setTotal_exames(Long total_exames) {
+    public void setTotal_exames(Integer total_exames) {
         this.total_exames = total_exames;
     }
 }
